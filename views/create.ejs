@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <title>Create your secret</title>
+  <style>
+    .ql-toolbar {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<nav class="w-full bg-indigo-600 py-2 flex flex-row justify-between">
+  <div class="text-xl px-8 text-white">Nolan</div>
+  <ul class="w-1/3 list-type-none flex flex-row justify-evenly text-white">
+    <li>Home</li>
+    <li>Create</li>
+  </ul>
+</nav>
+<div class="text-3xl font-bold w-full text-center my-8">
+  Create a Secret and share it 1 time.
+</div>
+<div class="mx-auto rounded-md shadow-md w-fit my-8 p-4 text-center">
+Your IP -> <%= yourIP %>
+</div>
+<form action="/create-secret">
+  <div class="w-10/12 mx-auto h-full bg-white shadow-md rounded-lg">
+    <div id="editor" class="rounded-b-lg">
+
+    </div>
+  </div>
+  <button type="submit" class="mx-auto w-fit px-4 py-2 text-white rounded-lg bg-indigo-600">
+    Save
+  </button>
+</form>
+
+<script>
+  const quill = new Quill("#editor", {
+    theme: "snow"
+  });
+</script>
+</body>
+</html>
